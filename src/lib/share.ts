@@ -14,6 +14,8 @@ export const shareStatus = (
       lost ? 'X' : guesses.length
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
       generateEmojiGrid(guesses)
+
+    +'\n\n https://maartenbosteels.github.io/domaindle/ \n\n'
   )
 }
 
