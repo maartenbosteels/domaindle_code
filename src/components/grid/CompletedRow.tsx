@@ -21,6 +21,10 @@ export const CompletedRow = ({ guess, isRevealing }: Props) => {
           isCompleted
         />
       ))}
+      {/*// border-solid border-2*/}
+      <div className="letter-container correct shadowed w-14 h-14  flex items-center justify-center mx-0.5 text-4xl font-bold rounded dark:text-white">
+        .be
+      </div>
     </div>
   )
 }

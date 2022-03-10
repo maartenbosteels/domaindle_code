@@ -30,6 +30,7 @@ import {
   isWinningWord,
   solution,
   findFirstUnusedReveal,
+  isDnssecSigned,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
@@ -172,7 +173,7 @@ function App() {
     setCurrentGuess(currentGuess.slice(0, -1))
   }
 
-  const onEnter = () => {
+  const onEnter = async () => {
     if (isGameWon || isGameLost) {
       return
     }
@@ -184,7 +185,11 @@ function App() {
       }, ALERT_TIME_MS)
     }
 
-    if (!isWordInWordList(currentGuess)) {
+    let isInWordList = await isWordInWordList(currentGuess)
+    // console.log("isInWordList" + isInWordList)
+    // console.log("isInWordList" + typeof (isInWordList))
+
+    if (!isInWordList) {
       showErrorAlert(WORD_NOT_FOUND_MESSAGE)
       setCurrentRowClass('jiggle')
       return setTimeout(() => {
@@ -197,6 +202,15 @@ function App() {
       const firstMissingReveal = findFirstUnusedReveal(currentGuess, guesses)
       if (firstMissingReveal) {
         showErrorAlert(firstMissingReveal)
+        setCurrentRowClass('jiggle')
+        return setTimeout(() => {
+          setCurrentRowClass('')
+        }, ALERT_TIME_MS)
+      }
+      const signed = await isDnssecSigned(currentGuess)
+      console.log('isHardMode=true => signed: ' + signed)
+      if (!signed) {
+        showErrorAlert('Domain name is not DNSSEC signed')
         setCurrentRowClass('jiggle')
         return setTimeout(() => {
           setCurrentRowClass('')
