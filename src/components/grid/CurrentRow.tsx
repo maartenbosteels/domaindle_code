@@ -19,6 +19,11 @@ export const CurrentRow = ({ guess, className }: Props) => {
       {emptyCells.map((_, i) => (
         <Cell key={i} />
       ))}
+
+      <div className="letter-container correct shadowed w-14 h-14  flex items-center justify-center mx-0.5 text-4xl font-bold rounded dark:text-white">
+        .be
+      </div>
+
     </div>
   )
 }

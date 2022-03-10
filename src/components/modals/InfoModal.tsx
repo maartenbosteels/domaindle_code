@@ -8,10 +8,11 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="How to play domaindle" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the word in 6 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the word.
+        Guess the domain name of the day in 6 tries.
+        You can only use domain names that are registered.
+        After each guess, the color of the tiles will change to show how close your guess was to the domain name of the day.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -21,13 +22,13 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           value="W"
           status="correct"
         />
-        <Cell value="E" />
         <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
+        <Cell value="V" />
+        <Cell value="E" />
+        <Cell value="S" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        The letter W is in the domain name of the day and in the correct spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -43,7 +44,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="T" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        The letter L is in the domain name of the day but in the wrong spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -54,18 +55,20 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        The letter U is not in the domain name of the day in any spot.
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
+        This game is based on the original Wordle.
+        <br/>
+        The implementation started from
         <a
-          href="https://github.com/cwackerfuss/react-wordle"
-          className="underline font-bold"
+          href="https://github.com/cwackerfuss/react-wordle"  className="underline"
         >
-          check out the code here
-        </a>{' '}
+          react-wordle
+        </a>.
+        <br/>
+        And will soon be open sourced as well.
       </p>
     </BaseModal>
   )
