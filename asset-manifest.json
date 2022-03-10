@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/domaindle/static/css/main.49a3d093.css",
+    "main.js": "/domaindle/static/js/main.28dda50d.js",
+    "static/js/787.b3f9d252.chunk.js": "/domaindle/static/js/787.b3f9d252.chunk.js",
+    "index.html": "/domaindle/index.html",
+    "main.49a3d093.css.map": "/domaindle/static/css/main.49a3d093.css.map",
+    "main.28dda50d.js.map": "/domaindle/static/js/main.28dda50d.js.map",
+    "787.b3f9d252.chunk.js.map": "/domaindle/static/js/787.b3f9d252.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49a3d093.css",
+    "static/js/main.28dda50d.js"
+  ]
+}
